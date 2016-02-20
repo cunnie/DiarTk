@@ -1,6 +1,6 @@
 ## DiarTk
 
-This is a fork of the Speaker Diarization Toolkit, 
+This is a fork of the Speaker Diarization Toolkit,
 [DiarTk](https://www.idiap.ch/scientific-research/resources/speaker-diarization-toolkit),
 originally created at the
 [Idiap Research Institute](http://publications.idiap.ch/index.php/publications/show/2407).
@@ -14,7 +14,9 @@ vagrant box add precise64 http://files.vagrantup.com/precise64_vmware.box
 vagrant up
 vagrant ssh
 sudo apt-get update
-sudo apt-get install -y g++ cmake make libboost-all-dev
+sudo apt-get install -y g++ cmake make libboost-all-dev curl
+curl -OL http://www.itl.nist.gov/iad/mig/tests/rt/2006-spring/code/md-eval-v21.pl
+chmod +x md-eval-v21.pl
 ```
 
 Compile DiarTk:
