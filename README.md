@@ -44,6 +44,10 @@ The expected DER is 8.79%
 
 ---
 
+### Notes
+
+#### Compiling under OS X Fails
+
 Trying to compile under OS X gave us the following error:
 
 ```
