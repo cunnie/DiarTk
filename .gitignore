@@ -2,5 +2,7 @@ CMakeCache.txt
 CMakeFiles/
 Makefile
 cmake_install.cmake
-.vagrant
+.vagrant/
 src/diarization/cmake/diarizeme
+result.dir/
+md-eval-v21.pl
