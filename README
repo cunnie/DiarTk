@@ -1,0 +1,39 @@
+This README file explains, in brief, the commands to 
+compile and run the IB diarization toolkit.
+
+# PREREQUISITES
+
+There are three prerequisites to the package
+
+1) Cmake -- required to build the package
+2) libboost -- boost library for C++
+3) openmp library -- for multithreaded processing
+
+# CLEAN COMPILATION
+
+$> cd src/diarization/cmake/
+$> cmake .
+$> # make clean if cmake has already been run once
+$> make
+
+# TO RUN
+
+$> # cd to $IB_DIARIZATION_HOME
+$> bash scripts/run.diarizeme.sh ipfile scpfile opfolder fileid [betaval]
+
+
+Example command
+
+$> bash scripts/run.diarizeme.sh data/mfcc/AMI_20050204-1206.fea data/scp/AMI_20050204-1206.scp result.dir/ AMI_20050204-1206
+
+To test the result use md-perl-eval tool available on the NIST website
+
+$> perl md-eval-v21.pl -m -afc -c 0.25 -r data/rttm/AMI_20050204-1206.rttm -s result.dir/AMI_20050204-1206.rttm
+
+The expected DER is 8.79%
+
+To add TDOA features, use the following script
+
+$>bash scripts/run.diarizeme.tdoa.sh data/mfcc/$AMI_20050204-1206.fea 0.8 data/tdoa/$AMI_20050204-1206.fea 0.2 data/scp/$AMI_20050204-1206.scp result.dir.tdoa $AMI_20050204-1206
+
+The expected DER is 7.12%
